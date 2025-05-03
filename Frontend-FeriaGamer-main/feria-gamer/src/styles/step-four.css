@@ -1,0 +1,68 @@
+.confirmation-section {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .confirmation-section h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .email-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 0 auto 20px;
+    max-width: 400px;
+  }
+  
+  .email-item {
+    padding: 5px 0;
+    color: #333;
+  }
+  
+  .email-item:not(:last-child) {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .confirmation-message {
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .resend-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .resend-question {
+    color: #666;
+  }
+  
+  .resend-button {
+    background-color: #9333ea;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+  
+  .resend-button:hover {
+    background-color: #7e22ce;
+  }
+  
+  @media (max-width: 600px) {
+    .resend-section {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+  

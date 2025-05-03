@@ -1,0 +1,190 @@
+.courseDetailContainer {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .mainContent {
+    flex: 1;
+    padding: 2rem;
+    margin-left: 250px;
+  }
+  
+  .courseTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .dropdownSection {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+  }
+  
+  .nrcDropdown {
+    background-color: #9333ea;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .dropdownArrow {
+    margin-left: 0.5rem;
+  }
+  
+  .chartSection {
+    margin-bottom: 2rem;
+  }
+  
+  .chartCard {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chartHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .chartFilter {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .chartContent {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+  
+  .chartLabels {
+    width: 40%;
+    padding-right: 1rem;
+  }
+  
+  .chartLabel {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .chartBars {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .chartBar {
+    height: 30px;
+    background-color: #6366f1;
+    border-radius: 0.25rem;
+  }
+  
+  .chartScale {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10% 0 40%;
+    font-size: 0.8rem;
+    color: #999;
+  }
+  
+  .navigationControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .navButton {
+    background-color: #9333ea;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+  
+  .navIndicator {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0 1rem;
+  }
+  
+  .navDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ddd;
+  }
+  
+  .tableSection {
+    overflow-x: auto;
+  }
+  
+  .studentsTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .studentsTable th {
+    background-color: #9333ea;
+    color: white;
+    text-align: left;
+    padding: 1rem;
+  }
+  
+  .studentsTable td {
+    padding: 1rem;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .teamLogo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 768px) {
+    .mainContent {
+      margin-left: 60px;
+      padding: 1rem;
+    }
+  
+    .courseTitle {
+      font-size: 1.8rem;
+    }
+  
+    .chartContent {
+      flex-direction: column;
+    }
+  
+    .chartLabels,
+    .chartBars {
+      width: 100%;
+    }
+  
+    .chartScale {
+      padding: 0;
+    }
+  }
+  
