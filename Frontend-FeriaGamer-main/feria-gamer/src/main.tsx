@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import FeriaGamer from './App';
 import Consultar from './Consultar';
 import Steps from './Stepts';
-import JuradoApp from './JuradoApp';
 
 import Login from './LoginProfesor/login-page';
 import TeacherDashboard from './LoginProfesor/teacher-dashboard';
@@ -46,7 +45,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/login" element={<Login />} />
         <Route path="/profesor" element={<TeacherDashboard />} />
         <Route path="/curso/:nombre" element={<CourseDetail />} />
-        <Route path="/jurado" element={<JuradoApp />} />
 
         {/* Rutas protegidas */}
 

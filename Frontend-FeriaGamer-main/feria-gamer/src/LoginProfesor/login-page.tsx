@@ -19,7 +19,7 @@ export default function LoginPage() {
     if (selectedRole === "jurado") {
       window.location.href = "/profesor"
     } else if (selectedRole === "admin") {
-      window.location.href = "/admn"
+      window.location.href = "/admin"
     }
   }  
 
