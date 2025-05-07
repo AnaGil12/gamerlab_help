@@ -13,7 +13,7 @@ const Sidebar: React.FC = () => {
           <span className="nav-icon">👥</span>
           <span className="nav-text">Gestionar Jurados</span>
         </NavLink>
-        <NavLink to="/admin/materials" className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}>
+        <NavLink to="/admin/subjects" className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}>
           <span className="nav-icon">📚</span>
           <span className="nav-text">Gestionar Materias y NRC</span>
         </NavLink>

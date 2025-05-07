@@ -18,7 +18,9 @@ export default function Consultar() {
           <a href="#" className="nav-link">
             Administrador
           </a>
-          <button className="login-button">Iniciar sesión</button>
+          <Link to="/login" className="login-button">
+            Iniciar sesión
+          </Link>
         </nav>
       </header>
 

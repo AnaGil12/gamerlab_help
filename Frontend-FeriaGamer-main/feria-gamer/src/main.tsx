@@ -23,6 +23,7 @@ import EventMonitoring from './pages-admin/EventMonitoring';
 import ProfessorManagement from './pages-admin/ProfessorManagement';
 import AddProfessor from './pages-admin/AddProfessor';
 import ProfessorDetails from './pages-admin/ProfessorDetails';
+import SubjectsManagement from "./pages-admin/SubjectsManagement"
 
 // Layout con Outlet
 const AdminLayout = () => (
@@ -60,6 +61,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="professors" element={<ProfessorManagement />} />
           <Route path="professors/add" element={<AddProfessor />} />
           <Route path="professors/:id" element={<ProfessorDetails />} />
+          <Route path="subjects" element={<SubjectsManagement />} />
         </Route>
       </Routes>
     </BrowserRouter>

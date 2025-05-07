@@ -34,6 +34,7 @@
   .header-button.primary {
     background-color: #333;
     color: white;
+    text-decoration: none;
   }
   
   .header-button.primary:hover {
