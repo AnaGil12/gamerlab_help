@@ -1,21 +1,17 @@
 "use client"
 
+import { useParams } from "react-router-dom"
 import Sidebar from "./sidebar"
 import styles from "./course-detaile.module.css"
 
-interface CourseDetailProps {
-  courseName: string
-  onBack: () => void
-  onLogout: () => void
-}
-
-export default function CourseDetail({ courseName, onBack, onLogout }: CourseDetailProps) {
+export default function CourseDetail() {
+  const { nombre } = useParams<{ nombre: string }>()
   return (
     <div className={styles.courseDetailContainer}>
-      <Sidebar onLogout={onLogout} activeButton="visualizar" />
+      <Sidebar onLogout={() => (window.location.href = "/login")} activeButton="visualizar" />
 
       <main className={styles.mainContent}>
-        <h1 className={styles.courseTitle}>{courseName}</h1>
+        <h1 className={styles.courseTitle}>{nombre}</h1>
 
         <div className={styles.dropdownSection}>
           <button className={styles.nrcDropdown}>
@@ -120,3 +116,4 @@ export default function CourseDetail({ courseName, onBack, onLogout }: CourseDet
     </div>
   )
 }
+

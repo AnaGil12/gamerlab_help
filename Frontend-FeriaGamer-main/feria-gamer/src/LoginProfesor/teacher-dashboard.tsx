@@ -1,17 +1,23 @@
 "use client"
 
+import { useNavigate } from "react-router-dom"
 import Sidebar from "./sidebar"
 import styles from "./teacher-dashboard.module.css"
 
-interface TeacherDashboardProps {
-  onCourseSelect: (course: string) => void
-  onLogout: () => void
-}
+export default function TeacherDashboard() {
+  const navigate = useNavigate()
 
-export default function TeacherDashboard({ onCourseSelect, onLogout }: TeacherDashboardProps) {
+  const handleCourseSelect = (course: string) => {
+    navigate(`/curso/${encodeURIComponent(course)}`)
+  }
+
+  const handleLogout = () => {
+    navigate("/login")
+  }
+
   return (
     <div className={styles.dashboardContainer}>
-      <Sidebar onLogout={onLogout} activeButton="visualizar" />
+      <Sidebar onLogout={handleLogout} activeButton="visualizar" />
 
       <main className={styles.mainContent}>
         <div className={styles.welcomeMessage}>
@@ -20,15 +26,15 @@ export default function TeacherDashboard({ onCourseSelect, onLogout }: TeacherDa
         </div>
 
         <div className={styles.coursesGrid}>
-          <button className={styles.courseCard} onClick={() => onCourseSelect("Estructura de Datos I")}>
+          <button className={styles.courseCard} onClick={() => handleCourseSelect("Estructura de Datos I")}>
             Estructura de Datos I
           </button>
 
-          <button className={styles.courseCard} onClick={() => onCourseSelect("Optimizacion")}>
+          <button className={styles.courseCard} onClick={() => handleCourseSelect("Optimizacion")}>
             Optimizacion
           </button>
 
-          <button className={styles.courseCard} onClick={() => onCourseSelect("Algoritmia y Programacion II")}>
+          <button className={styles.courseCard} onClick={() => handleCourseSelect("Algoritmia y Programacion II")}>
             Algoritmia y Programacion II
           </button>
         </div>

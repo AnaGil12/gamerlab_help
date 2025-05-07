@@ -1,39 +1,20 @@
 "use client"
 
-import { useState } from "react"
+import { Routes, Route } from "react-router-dom"
 import LoginPage from "./login-page"
 import TeacherDashboard from "./teacher-dashboard"
 import CourseDetail from "./course-detail"
 import "./globals.css"
 
-export default function App() {
-  const [currentPage, setCurrentPage] = useState("login")
-  const [selectedCourse, setSelectedCourse] = useState("")
-
-  const handleLogin = () => {
-    setCurrentPage("dashboard")
-  }
-
-  const handleCourseSelect = (course: string) => {
-    setSelectedCourse(course)
-    setCurrentPage("courseDetail")
-  }
-
-  const handleBackToDashboard = () => {
-    setCurrentPage("dashboard")
-  }
-
-  const handleLogout = () => {
-    setCurrentPage("login")
-  }
-
+export default function Page() {
   return (
     <div className="app-container">
-      {currentPage === "login" && <LoginPage onLogin={handleLogin} />}
-      {currentPage === "dashboard" && <TeacherDashboard onCourseSelect={handleCourseSelect} onLogout={handleLogout} />}
-      {currentPage === "courseDetail" && (
-        <CourseDetail courseName={selectedCourse} onBack={handleBackToDashboard} onLogout={handleLogout} />
-      )}
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/profesor" element={<TeacherDashboard />} />
+        <Route path="/curso/:nombre" element={<CourseDetail />} />
+      </Routes>
     </div>
   )
 }
+

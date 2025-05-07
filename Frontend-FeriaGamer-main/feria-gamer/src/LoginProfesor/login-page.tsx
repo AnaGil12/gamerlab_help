@@ -5,11 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import styles from "./login-page.module.css"
 
-interface LoginPageProps {
-  onLogin: () => void
-}
-
-export default function LoginPage({ onLogin }: LoginPageProps) {
+export default function LoginPage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [selectedRole, setSelectedRole] = useState("")
@@ -21,9 +17,11 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (selectedRole === "jurado") {
-      onLogin()
+      window.location.href = "/profesor"
+    } else if (selectedRole === "admin") {
+      window.location.href = "/admn"
     }
-  }
+  }  
 
   return (
     <div className={styles.loginContainer}>

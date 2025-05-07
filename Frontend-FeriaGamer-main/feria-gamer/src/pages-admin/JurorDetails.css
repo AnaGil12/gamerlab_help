@@ -1,0 +1,190 @@
+.juror-details-container {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.juror-name {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.juror-info-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+}
+
+.edit-button {
+  position: absolute;
+  right: 10px;
+  top: 38px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.teams-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.teams-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.teams-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.team-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.team-item:last-child {
+  border-bottom: none;
+}
+
+.team-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-icon {
+  font-size: 20px;
+}
+
+.team-toggle {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.team-toggle.active {
+  background-color: #8a2be2;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.action-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-button.delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.action-button.delete:hover {
+  background-color: #d32f2f;
+}
+
+.action-button.resend {
+  background-color: #8a2be2;
+  color: white;
+}
+
+.action-button.resend:hover {
+  background-color: #8a2be2;
+}
+
+.action-button.save {
+  background-color: #8a2be2;
+  color: white;
+}
+
+.action-button.save:hover {
+  background-color: #8a2be2;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 18px;
+  color: #f44336;
+}
+
+@media (max-width: 768px) {
+  .juror-details-container {
+    padding: 20px;
+  }
+
+  .juror-name {
+    font-size: 24px;
+  }
+
+  .juror-info-card,
+  .teams-card {
+    padding: 20px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .action-button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,82 @@
+.jury-management-container {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.jury-title {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.empty-message {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.jurors-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.jurors-table th {
+  background-color: #8a2be2;
+  color: white;
+  text-align: left;
+  padding: 14px 16px;
+  font-weight: 500;
+}
+
+.jurors-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.jurors-table tr:last-child td {
+  border-bottom: none;
+}
+
+.jurors-table tbody tr {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.jurors-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+  .jury-management-container {
+    padding: 20px;
+  }
+
+  .jury-title {
+    font-size: 24px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .jurors-table th,
+  .jurors-table td {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
