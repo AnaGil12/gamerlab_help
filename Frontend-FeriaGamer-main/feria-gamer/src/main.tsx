@@ -10,6 +10,7 @@ import TeacherDashboard from './LoginProfesor/teacher-dashboard';
 import CourseDetail from './LoginProfesor/course-detail';
 import './App2.css';
 
+import JuradosDashboard from './components-jurados/Appjurado';
 
 // Admin
 import Sidebar from './components-admin/Sidebar';
@@ -45,6 +46,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/registrar" element={<Steps />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profesor" element={<TeacherDashboard />} />
+        <Route path="/jurados/*" element={<JuradosDashboard />} /> 
         <Route path="/curso/:nombre" element={<CourseDetail />} />
 
         {/* Rutas protegidas */}

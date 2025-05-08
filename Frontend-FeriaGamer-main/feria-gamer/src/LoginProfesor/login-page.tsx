@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import styles from "./login-page.module.css"
 
@@ -16,12 +15,16 @@ export default function LoginPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (selectedRole === "jurado") {
+    // Lógica de autenticación aquí (validar email/password)
+    
+    if (selectedRole === "profesor") {
       window.location.href = "/profesor"
     } else if (selectedRole === "admin") {
       window.location.href = "/admin"
+    } else if (selectedRole === "jurado") {
+      window.location.href = "/jurados"
     }
-  }  
+  }
 
   return (
     <div className={styles.loginContainer}>
@@ -33,7 +36,7 @@ export default function LoginPage() {
         <div className={styles.loginCard}>
           <div className={styles.loginForm}>
             <h2>INICIA SESIÓN</h2>
-            <p>Inicia sesión con tu correo electronico</p>
+            <p>Inicia sesión con tu correo electrónico</p>
 
             <form onSubmit={handleSubmit}>
               <div className={styles.inputGroup}>
@@ -55,7 +58,7 @@ export default function LoginPage() {
               </div>
 
               <button type="submit" className={styles.signupButton}>
-                Sign up
+                Iniciar sesión
               </button>
 
               <div className={styles.roleSelector}>
@@ -68,10 +71,17 @@ export default function LoginPage() {
                 </button>
                 <button
                   type="button"
+                  className={`${styles.roleButton} ${selectedRole === "profesor" ? styles.selected : ""}`}
+                  onClick={() => handleRoleSelect("profesor")}
+                >
+                  Profesor
+                </button>
+                <button
+                  type="button"
                   className={`${styles.roleButton} ${selectedRole === "jurado" ? styles.selected : ""}`}
                   onClick={() => handleRoleSelect("jurado")}
                 >
-                  Profesor
+                  Jurado
                 </button>
               </div>
             </form>

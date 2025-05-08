@@ -83,6 +83,7 @@
   .roleSelector {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap; /* Permite ajuste en móviles */
   }
   
   .roleButton {
@@ -91,6 +92,10 @@
     font-size: 1rem;
     padding: 0.5rem 0;
     position: relative;
+    flex: 1;
+    min-width: 100px; /* Evita que los botones sean demasiado pequeños */
+    text-align: center;
+    padding: 0.5rem 0.8rem !important; /* Ajuste de padding */
   }
   
   .roleButton.selected::after {

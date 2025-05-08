@@ -1,0 +1,80 @@
+.jurados-toast-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Centra el toast horizontalmente desde el principio */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .jurados-toast {
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Lo hace invisible al principio */
+    transition: opacity 0.5s ease-out; /* Solo la opacidad cambiará */
+  }
+  
+  .jurados-toast.success {
+    background-color: #28a745; /* Verde para éxito */
+  }
+  
+  .jurados-toast.error {
+    background-color: #dc3545; /* Rojo para error */
+  }
+  
+  .jurados-toast-info {
+    background-color: #007bff; /* Azul para información */
+  }
+  
+  .jurados-toast button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .jurados-toast button:hover {
+    color: #f0f0f0;
+  }
+  
+  /* Animaciones */
+  @keyframes jurados-fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes jurados-fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .jurados-toast.jurados-fade-in {
+    animation: jurados-fadeIn 0.5s ease-out forwards; /* Aparece suavemente */
+  }
+  
+  .jurados-toast.jurados-fade-out {
+    animation: jurados-fadeOut 0.5s ease-out forwards; /* Desaparece suavemente */
+  }
+  

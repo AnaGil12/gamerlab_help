@@ -1,0 +1,33 @@
+.jurados-header {
+  background-color: white;
+  height: 50px;
+  display: flex;
+  justify-content: space-between; /* distribuye espacio entre título y botón */
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  position: relative;
+}
+
+.jurados-header h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.jurados-logout-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.jurados-logout-button:hover {
+  background-color: #d32f2f;
+}
