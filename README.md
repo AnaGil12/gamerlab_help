@@ -34,7 +34,13 @@ npm install react-router-dom
 npm install --save-dev @types/react-router-dom
 ```
 
-#### 5. Configuración de Permisos (opcional)
+#### 5. Instala Lucide React
+
+```bash
+npm install lucide-react
+```
+
+#### 6. Configuración de Permisos (opcional)
 
 Si experimentas errores relacionados con permisos, abre PowerShell en el mismo directorio del proyecto y ejecuta:
 
@@ -42,7 +48,7 @@ Si experimentas errores relacionados con permisos, abre PowerShell en el mismo d
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-#### 6. Abrir el Proyecto en Visual Studio Code
+#### 7. Abrir el Proyecto en Visual Studio Code
 
 Desde Visual Studio Code, abre el directorio raíz del proyecto. Luego, asegúrate de que la terminal esté posicionada en el subdirectorio `feria-gamer`:
 
@@ -50,7 +56,7 @@ Desde Visual Studio Code, abre el directorio raíz del proyecto. Luego, asegúra
 cd feria-gamer
 ```
 
-#### 7. Iniciar el Servidor de Desarrollo
+#### 8. Iniciar el Servidor de Desarrollo
 
 Para iniciar la aplicación en modo desarrollo, ejecuta:
 
