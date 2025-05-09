@@ -1,0 +1,160 @@
+.criteria-management-container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .criteria-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .qualification-range {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+  
+  .range-value {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  .criteria-table-container {
+    margin-bottom: 30px;
+    overflow-x: auto;
+  }
+  
+  .criteria-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  .criteria-table th {
+    background-color: #8a2be2;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    font-weight: 500;
+  }
+  
+  .criteria-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .criteria-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .criteria-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .criterion-column {
+    width: 25%;
+  }
+  
+  .description-column {
+    width: 50%;
+  }
+  
+  .percentage-column {
+    width: 10%;
+    text-align: center;
+  }
+  
+  .actions-column {
+    width: 15%;
+  }
+  
+  .actions-cell {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  
+  .action-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+  }
+  
+  .action-icon:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .delete-icon:hover {
+    color: #f44336;
+  }
+  
+  .edit-icon:hover {
+    color: #2196f3;
+  }
+  
+  .percentage-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .criteria-management-container {
+      padding: 20px;
+    }
+  
+    .criteria-title {
+      font-size: 24px;
+    }
+  
+    .qualification-range {
+      font-size: 14px;
+    }
+  
+    .range-value {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+    }
+  
+    .criteria-table th,
+    .criteria-table td {
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+  
+    .action-icon {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+    }
+  }
+  

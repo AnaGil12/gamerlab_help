@@ -1,0 +1,177 @@
+.jurados-game-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  min-height: calc(100vh - 90px);
+}
+
+.jurados-game-details-content {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.jurados-game-header {
+  padding: 20px;
+}
+
+.jurados-team-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.jurados-game-subtitle {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.jurados-game-name {
+  font-style: italic;
+}
+
+.jurados-game-info {
+  display: flex;
+  padding: 20px;
+}
+
+.jurados-game-logo-container {
+  position: relative;
+  background-color: #9333ea;
+  padding: 20px;
+  border-radius: 8px;
+  margin-right: 30px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jurados-quote-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 40px;
+  color: white;
+}
+
+.jurados-game-detail-logo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  background-color: #111;
+  border-radius: 8px;
+}
+
+.jurados-game-description {
+  flex: 1;
+}
+
+.jurados-game-description p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.jurados-game-metadata {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.jurados-metadata-item {
+  margin-right: 30px;
+  display: flex;
+}
+
+.jurados-metadata-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.jurados-team-members {
+  margin-bottom: 30px;
+}
+
+.jurados-team-member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.jurados-member-icon {
+  color: #9333ea;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.jurados-action-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.jurados-rate-button,
+.jurados-view-rating-button {
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.jurados-rate-button:hover,
+.jurados-view-rating-button:hover {
+  background-color: #333;
+}
+
+@media (max-width: 768px) {
+  .jurados-game-info {
+    flex-direction: column;
+  }
+
+  .jurados-game-logo-container {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .jurados-game-details-container {
+    padding: 15px;
+  }
+
+  .jurados-team-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jurados-game-header {
+    padding: 15px;
+  }
+
+  .jurados-team-title {
+    font-size: 20px;
+  }
+
+  .jurados-game-subtitle {
+    font-size: 16px;
+  }
+
+  .jurados-game-logo-container {
+    height: 250px;
+  }
+
+  .jurados-game-detail-logo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .jurados-metadata-item {
+    margin-right: 15px;
+  }
+}

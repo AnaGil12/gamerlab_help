@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{message}}</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .dashboard-link {
+      background-color: #2980b9;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+    }
+    .dashboard-link:hover {
+      background-color: #3498db;
+    }
+    .dashboard-icon {
+      margin-right: 8px;
+    }
+    .videojuego-card {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .header h2 {
+      margin: 0;
+      color: #2980b9;
+    }
+    .promedio-total {
+      background-color: #2980b9;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+    .criterios {
+      margin-top: 20px;
+    }
+    .criterio {
+      background-color: white;
+      border-radius: 6px;
+      padding: 15px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .criterio-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .criterio-nombre {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    .criterio-promedio {
+      background-color: #e0f7fa;
+      padding: 3px 10px;
+      border-radius: 12px;
+      color: #0097a7;
+      font-weight: bold;
+    }
+    .criterio-descripcion {
+      color: #7f8c8d;
+      font-size: 0.9em;
+    }
+    .loading {
+      text-align: center;
+      padding: 40px 0;
+      color: #7f8c8d;
+    }
+    .equipo-info {
+      color: #7f8c8d;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+    .total-evaluaciones {
+      font-size: 0.85em;
+      color: #7f8c8d;
+      margin-top: 10px;
+      text-align: right;
+    }
+    .ver-detalle {
+      display: inline-block;
+      margin-top: 15px;
+      color: #2980b9;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .ver-detalle:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>{{message}}</h1>
+    <a href="/evaluaciones/dashboard" class="dashboard-link">
+      <span class="dashboard-icon">📊</span>Dashboard en tiempo real
+    </a>
+  </div>
+  
+  <div id="app">
+    <div id="loading" class="loading">
+      <p>Cargando evaluaciones...</p>
+    </div>
+    <div id="contenido"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchEvaluaciones();
+    });
+
+    async function fetchEvaluaciones() {
+      try {
+        const response = await fetch('/evaluaciones/consolidacion');
+        if (!response.ok) {
+          throw new Error('Error al obtener las evaluaciones');
+        }
+        
+        const evaluaciones = await response.json();
+        renderEvaluaciones(evaluaciones);
+      } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('loading').innerHTML = `
+          <p>Error al cargar las evaluaciones: ${error.message}</p>
+        `;
+      }
+    }
+
+    function renderEvaluaciones(evaluaciones) {
+      const contenido = document.getElementById('contenido');
+      document.getElementById('loading').style.display = 'none';
+      
+      if (evaluaciones.length === 0) {
+        contenido.innerHTML = '<p>No hay evaluaciones disponibles</p>';
+        return;
+      }
+
+      const html = evaluaciones.map(evaluacion => {
+        return `
+          <div class="videojuego-card">
+            <div class="header">
+              <h2>${evaluacion.nombre_videojuego}</h2>
+              <div class="promedio-total">Promedio: ${evaluacion.promedio_total}</div>
+            </div>
+            <div class="equipo-info">Equipo: ${evaluacion.equipo}</div>
+            
+            <div class="criterios">
+              ${evaluacion.criterios.slice(0, 3).map(criterio => `
+                <div class="criterio">
+                  <div class="criterio-header">
+                    <div class="criterio-nombre">${criterio.nombre}</div>
+                    <div class="criterio-promedio">${criterio.promedio}</div>
+                  </div>
+                  <div class="criterio-descripcion">${criterio.descripcion}</div>
+                </div>
+              `).join('')}
+              ${evaluacion.criterios.length > 3 ? 
+                `<div class="criterio" style="text-align: center; padding: 10px;">
+                  <span style="color: #7f8c8d; font-style: italic;">Y ${evaluacion.criterios.length - 3} criterios más...</span>
+                </div>` : ''}
+            </div>
+            
+            <div class="total-evaluaciones">
+              Total de evaluaciones: ${evaluacion.total_evaluaciones}
+            </div>
+            
+            <a href="/evaluaciones/detalle?id=${evaluacion.id_videojuego}" class="ver-detalle">
+              Ver detalle completo →
+            </a>
+          </div>
+        `;
+      }).join('');
+
+      contenido.innerHTML = html;
+    }
+  </script>
+</body>
+</html> 

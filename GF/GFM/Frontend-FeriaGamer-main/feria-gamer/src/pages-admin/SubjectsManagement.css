@@ -1,0 +1,446 @@
+.subjects-management-container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Welcome View */
+  .welcome-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    min-height: 60vh;
+  }
+  
+  .welcome-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-text {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .button {
+    background-color: #8a3ffc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .button:hover {
+    background-color: #7732e6;
+  }
+  
+  .button-secondary {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+  }
+  
+  .button-secondary:hover {
+    background-color: #e5e5e5;
+  }
+  
+  .button-danger {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .button-danger:hover {
+    background-color: #d32f2f;
+  }
+  
+  .welcome-subjects-count {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #666;
+  }
+  
+  /* Form View */
+  .form-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .form-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .form-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  .form-input,
+  .form-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  .form-input-error {
+    border-color: #f44336;
+  }
+  
+  .error-message {
+    color: #f44336;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .form-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  /* Subjects List View */
+  .subjects-list-view {
+    padding: 20px;
+  }
+  
+  .subjects-list-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .no-subjects {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+  }
+  
+  .subjects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .subject-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: all 0.2s ease;
+  }
+  
+  .subject-card-selected {
+    border: 2px solid #8a3ffc;
+    box-shadow: 0 4px 20px rgba(138, 63, 252, 0.2);
+  }
+  
+  .subject-info {
+    margin-bottom: 15px;
+  }
+  
+  .subject-row {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .subject-label {
+    width: 150px;
+    font-weight: 500;
+    color: #666;
+  }
+  
+  .subject-value {
+    flex: 1;
+    font-weight: 500;
+  }
+  
+  .divider {
+    height: 1px;
+    background-color: #eee;
+    margin: 15px 0;
+  }
+  
+  .nrc-list {
+    margin-bottom: 15px;
+  }
+  
+  .nrc-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .nrc-label {
+    width: 150px;
+    font-weight: 500;
+    color: #666;
+  }
+  
+  .nrc-value {
+    flex: 1;
+  }
+  
+  .nrc-number {
+    background-color: #f5f5f5;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    margin-right: 10px;
+  }
+  
+  .delete-nrc-button {
+    background: none;
+    border: none;
+    color: #f44336;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+  }
+  
+  .delete-nrc-button:hover {
+    background-color: #ffebee;
+  }
+  
+  .subject-actions-spacer {
+    height: 10px;
+  }
+  
+  .subject-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .add-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #8a3ffc;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .add-button:hover {
+    background-color: #7732e6;
+    transform: scale(1.05);
+  }
+  
+  .delete-subject-button {
+    background: none;
+    border: none;
+    color: #f44336;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+  }
+  
+  .delete-subject-button:hover {
+    background-color: #ffebee;
+  }
+  
+  .bottom-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  /* Select Subject View */
+  .select-subject-view {
+    padding: 20px;
+  }
+  
+  .select-subject-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .subject-select-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .subject-select-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .subject-select-content {
+    padding-right: 30px; /* Space for delete button */
+  }
+  
+  .subject-select-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .subject-select-code {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  
+  .subject-select-nrcs {
+    font-size: 14px;
+    color: #8a3ffc;
+    font-weight: 500;
+  }
+  
+  .delete-subject-button-small {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #f44336;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+  }
+  
+  .delete-subject-button-small:hover {
+    background-color: #ffebee;
+  }
+  
+  /* Confirm Dialog */
+  .confirm-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .confirm-dialog {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 24px;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .confirm-message {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .confirm-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .button-container {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .form-buttons-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .bottom-buttons-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .subject-row {
+      flex-direction: column;
+    }
+  
+    .subject-label {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  
+    .nrc-row {
+      flex-wrap: wrap;
+    }
+  
+    .nrc-label {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  
+    .subjects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

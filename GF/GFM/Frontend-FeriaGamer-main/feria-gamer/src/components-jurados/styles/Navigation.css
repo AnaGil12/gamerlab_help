@@ -1,0 +1,50 @@
+.jurados-navigation {
+  background-color: white;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  gap: 1rem;
+}
+
+.jurados-nav-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.jurados-nav-item:hover {
+  background-color: #f5f5f5;
+}
+
+.jurados-nav-item.active {
+  background-color: #9333ea;
+  color: white;
+}
+
+.jurados-nav-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.jurados-nav-text {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .jurados-navigation {
+    padding: 0.25rem;
+    gap: 0.5rem;
+  }
+
+  .jurados-nav-item {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .jurados-nav-text {
+    font-size: 0.8rem;
+  }
+} 

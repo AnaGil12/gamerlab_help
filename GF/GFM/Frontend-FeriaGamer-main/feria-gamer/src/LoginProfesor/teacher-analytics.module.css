@@ -1,0 +1,56 @@
+.analyticsContainer {
+  display: flex;
+  min-height: 100vh;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 2rem;
+  margin-left: 250px;
+}
+
+.welcomeMessage {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.welcomeMessage h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.welcomeMessage p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.analyticsContent {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.analyticsContent p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 60px;
+    padding: 1rem;
+  }
+
+  .welcomeMessage h1 {
+    font-size: 1.8rem;
+  }
+
+  .welcomeMessage p {
+    font-size: 1rem;
+  }
+} 

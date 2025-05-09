@@ -1,0 +1,325 @@
+.jurados-games-list-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.jurados-games-list-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.jurados-search-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.jurados-search-input-wrapper {
+  display: flex;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.jurados-search-input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.jurados-search-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50px;
+  background-color: #9333ea;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.jurados-filters-container {
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.jurados-filter-label-container {
+  margin-right: 5px;
+}
+
+.jurados-filter-label {
+  font-size: 14px;
+  color: #666;
+}
+
+.jurados-filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.jurados-filter-dropdown {
+  position: relative;
+}
+
+/* Update the filter button styling to be more modern and clean */
+.jurados-filter-button {
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 100px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.jurados-filter-button:hover {
+  background-color: #f5f5f5;
+}
+
+.jurados-materia-button {
+  min-width: 120px;
+}
+
+/* Make the dropdown arrow smaller and more modern */
+.jurados-dropdown-arrow {
+  font-size: 8px;
+  margin-left: 8px;
+  color: #666;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jurados-subject-select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Add these styles for the dropdown appearance */
+.jurados-filter-button {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Make the dropdown arrow smaller and centered */
+.jurados-dropdown-arrow {
+  font-size: 8px;
+  color: #666;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom dropdown styling */
+.jurados-subject-select option {
+  padding: 10px;
+  background-color: white;
+  color: #333;
+}
+
+.jurados-subject-select option:hover {
+  background-color: #f5f5f5;
+}
+
+.jurados-subject-select option:checked {
+  background-color: #9333ea;
+  color: white;
+}
+
+.jurados-table-container {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.jurados-games-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.jurados-games-table th,
+.jurados-games-table td {
+  text-align: center;
+  padding: 15px;
+  vertical-align: middle;
+}
+
+.jurados-games-table th {
+  background-color: #9333ea;
+  color: white;
+  font-weight: normal;
+}
+
+.jurados-games-table th.logos-column {
+  width: 80px;
+}
+
+.jurados-games-table th.team-column,
+.jurados-games-table th.game-column {
+  width: 25%;
+}
+
+.jurados-games-table th.subject-column {
+  width: 15%;
+}
+
+.jurados-games-table th.rating-column {
+  width: 15%;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+}
+
+/* Style for the rating sort arrow */
+.jurados-rating-sort-arrow {
+  font-size: 8px;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.jurados-games-table td {
+  border-bottom: 1px solid #eee;
+}
+
+.jurados-games-table tr:hover {
+  background-color: #f9f0ff;
+  cursor: pointer;
+}
+
+.jurados-logo-cell {
+  text-align: center;
+}
+
+.jurados-game-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.jurados-rating-cell {
+  text-align: center;
+  vertical-align: middle;
+  padding: 15px;
+}
+
+.jurados-stars-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.jurados-star {
+  color: #ddd;
+  font-size: 18px;
+}
+
+.jurados-star.filled {
+  color: #ffb800;
+}
+
+.jurados-no-rating {
+  font-size: 18px;
+  color: #999;
+}
+
+@media (max-width: 992px) {
+  .jurados-games-table th,
+  .jurados-games-table td {
+    padding: 12px 10px;
+  }
+
+  .jurados-game-logo {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .jurados-games-list-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .jurados-filters-container {
+    flex-wrap: wrap;
+  }
+
+  .jurados-filter-label-container {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .jurados-filter-buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .jurados-filter-button {
+    min-width: 0;
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .jurados-filter-button:last-child {
+    margin-right: 0;
+  }
+
+  .jurados-table-container {
+    overflow-x: auto;
+  }
+
+  .jurados-games-table {
+    min-width: 650px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jurados-games-list-container {
+    padding: 15px;
+  }
+
+  .jurados-games-list-title {
+    font-size: 20px;
+  }
+
+  .jurados-search-input {
+    padding: 10px;
+  }
+
+  .jurados-filter-button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}

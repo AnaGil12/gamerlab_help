@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Evaluación</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+    .videojuego-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .videojuego-info {
+      flex: 1;
+    }
+    .videojuego-info h2 {
+      margin: 0 0 8px 0;
+      color: #2980b9;
+    }
+    .equipo-info {
+      color: #7f8c8d;
+      font-size: 0.95em;
+    }
+    .promedio-container {
+      background-color: #2980b9;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      min-width: 150px;
+    }
+    .promedio-label {
+      font-size: 0.9em;
+      margin-bottom: 5px;
+    }
+    .promedio-valor {
+      font-size: 2em;
+      font-weight: bold;
+    }
+    .criterios-container {
+      margin-top: 30px;
+    }
+    .criterio {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .criterio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .criterio-info {
+      flex: 1;
+    }
+    .criterio-nombre {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #2c3e50;
+      margin-bottom: 5px;
+    }
+    .criterio-descripcion {
+      color: #7f8c8d;
+    }
+    .criterio-promedio {
+      background-color: #e0f7fa;
+      padding: 8px 15px;
+      border-radius: 20px;
+      color: #0097a7;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .loading {
+      text-align: center;
+      padding: 40px 0;
+      color: #7f8c8d;
+    }
+    .volver {
+      display: inline-block;
+      margin-top: 20px;
+      color: #2980b9;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .volver:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Detalle de Evaluación</h1>
+  
+  <div id="app">
+    <div id="loading" class="loading">
+      <p>Cargando detalle de evaluación...</p>
+    </div>
+    <div id="contenido"></div>
+    <a href="/" class="volver">← Volver a la lista</a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Obtener el ID del videojuego de la URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const idVideojuego = urlParams.get('id');
+      
+      if (idVideojuego) {
+        fetchDetalleEvaluacion(idVideojuego);
+      } else {
+        document.getElementById('loading').innerHTML = '<p>Error: ID de videojuego no especificado</p>';
+      }
+    });
+
+    async function fetchDetalleEvaluacion(idVideojuego) {
+      try {
+        const response = await fetch(`/evaluaciones/consolidacion/${idVideojuego}`);
+        if (!response.ok) {
+          throw new Error('Error al obtener el detalle de evaluación');
+        }
+        
+        const evaluacion = await response.json();
+        renderDetalleEvaluacion(evaluacion);
+      } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('loading').innerHTML = `
+          <p>Error al cargar el detalle: ${error.message}</p>
+        `;
+      }
+    }
+
+    function renderDetalleEvaluacion(evaluacion) {
+      const contenido = document.getElementById('contenido');
+      document.getElementById('loading').style.display = 'none';
+      
+      const html = `
+        <div class="videojuego-header">
+          <div class="videojuego-info">
+            <h2>${evaluacion.nombre_videojuego}</h2>
+            <div class="equipo-info">Equipo: ${evaluacion.equipo}</div>
+          </div>
+          <div class="promedio-container">
+            <div class="promedio-label">Promedio Total</div>
+            <div class="promedio-valor">${evaluacion.promedio_total}</div>
+          </div>
+        </div>
+        
+        <div class="criterios-container">
+          <h3>Criterios de Evaluación</h3>
+          ${evaluacion.criterios.map(criterio => `
+            <div class="criterio">
+              <div class="criterio-header">
+                <div class="criterio-info">
+                  <div class="criterio-nombre">${criterio.nombre}</div>
+                  <div class="criterio-descripcion">${criterio.descripcion}</div>
+                </div>
+                <div class="criterio-promedio">${criterio.promedio}</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+        
+        <div class="total-evaluaciones">
+          <p>Este videojuego ha recibido un total de ${evaluacion.total_evaluaciones} evaluaciones.</p>
+        </div>
+      `;
+
+      contenido.innerHTML = html;
+    }
+  </script>
+</body>
+</html> 

@@ -1,0 +1,88 @@
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #eaeaea;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  
+  .logo {
+    padding: 1rem;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .logo h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .menuItems {
+    flex: 1;
+    padding: 1rem 0;
+  }
+  
+  .menuItem {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background: none;
+    color: #333;
+    text-align: left;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .menuItem.active {
+    background-color: #9333ea;
+    color: white;
+  }
+  
+  .icon {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .logoutContainer {
+    padding: 1rem;
+    border-top: 1px solid #eaeaea;
+  }
+  
+  .logoutButton {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem;
+    background: none;
+    color: #333;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 60px;
+      overflow: hidden;
+    }
+  
+    .logo h2,
+    .menuItem span:not(.icon),
+    .logoutButton span:not(.icon) {
+      display: none;
+    }
+  
+    .menuItem,
+    .logoutButton {
+      justify-content: center;
+    }
+  
+    .icon {
+      margin-right: 0;
+    }
+  }
+  
