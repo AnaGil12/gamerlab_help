@@ -1,0 +1,19 @@
+.home-page {
+  width: 100%;
+}
+
+.dashboard-icon {
+  margin-right: 8px;
+}
+
+.error {
+  color: #e74c3c;
+  background-color: #fce4e4;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.evaluaciones-list {
+  margin-top: 20px;
+} 

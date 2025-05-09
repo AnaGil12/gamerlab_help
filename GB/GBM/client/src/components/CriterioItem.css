@@ -1,0 +1,37 @@
+.criterio-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.criterio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.criterio-info {
+  flex: 1;
+}
+
+.criterio-nombre {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.criterio-descripcion {
+  color: #7f8c8d;
+}
+
+.criterio-promedio {
+  background-color: #e0f7fa;
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: #0097a7;
+  font-weight: bold;
+  font-size: 1.1em;
+} 

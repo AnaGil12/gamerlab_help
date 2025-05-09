@@ -26,6 +26,17 @@ async function bootstrap() {
     app.setBaseViewsDir(viewsPath);
     console.log(`Ruta de vistas configurada en: ${viewsPath}`);
     app.setViewEngine('hbs');
+    if (process.env.NODE_ENV === 'production') {
+        const reactClientPath = (0, path_1.join)(process.cwd(), 'client/build');
+        app.useStaticAssets(reactClientPath);
+        app.use((req, res, next) => {
+            if (!req.path.startsWith('/evaluaciones') && !req.path.startsWith('/prisma')) {
+                return res.sendFile((0, path_1.join)(reactClientPath, 'index.html'));
+            }
+            next();
+        });
+        console.log(`Sirviendo la aplicación React desde: ${reactClientPath}`);
+    }
     await app.listen(process.env.PORT ?? 3001);
     console.log(`Aplicación iniciada en: ${await app.getUrl()}`);
 }

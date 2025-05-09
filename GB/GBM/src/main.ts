@@ -38,6 +38,22 @@ async function bootstrap() {
   console.log(`Ruta de vistas configurada en: ${viewsPath}`);
   app.setViewEngine('hbs');
   
+  // Servir la aplicación React en producción
+  if (process.env.NODE_ENV === 'production') {
+    const reactClientPath = join(process.cwd(), 'client/build');
+    app.useStaticAssets(reactClientPath);
+    
+    // Para rutas no encontradas en la API, servir index.html de React
+    app.use((req, res, next) => {
+      if (!req.path.startsWith('/evaluaciones') && !req.path.startsWith('/prisma')) {
+        return res.sendFile(join(reactClientPath, 'index.html'));
+      }
+      next();
+    });
+    
+    console.log(`Sirviendo la aplicación React desde: ${reactClientPath}`);
+  }
+  
   // Usar un puerto diferente (3001) por si el 3000 sigue ocupado
   await app.listen(process.env.PORT ?? 3001);
   

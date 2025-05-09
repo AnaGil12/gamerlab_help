@@ -21,67 +21,114 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# GamerLab - Sistema de Evaluación de Videojuegos
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Descripción
 
-## Project setup
+Sistema de evaluación para videojuegos desarrollados por equipos de estudiantes. Permite a los jurados realizar evaluaciones según diferentes criterios y visualizar resultados consolidados.
 
-```bash
-$ npm install
+## Tecnologías
+
+- **Backend**: NestJS (Node.js), Prisma ORM
+- **Frontend**: React, React Router
+- **Base de datos**: PostgreSQL
+
+## Estructura del Proyecto
+
+```
+GB/GBM/
+├── client/                   # Frontend React
+│   ├── public/               # Archivos públicos
+│   └── src/                  # Código fuente React
+│       ├── components/       # Componentes reutilizables
+│       ├── hooks/            # Hooks personalizados
+│       ├── layouts/          # Layouts para páginas
+│       ├── pages/            # Páginas de la aplicación
+│       └── services/         # Servicios para API
+├── dist/                     # Build de producción (backend)
+├── prisma/                   # Configuración de Prisma ORM
+│   ├── migrations/           # Migraciones de la base de datos
+│   └── schema.prisma         # Esquema de la base de datos
+├── src/                      # Código fuente backend
+│   ├── evaluaciones/         # Módulo de evaluaciones
+│   └── prisma/               # Módulo de Prisma
+├── views/                    # Vistas Handlebars (Legacy)
 ```
 
-## Compile and run the project
+## Instalación y Ejecución
+
+### Requisitos previos
+
+- Node.js >= 16
+- PostgreSQL
+
+### Pasos de instalación
+
+1. Clonar el repositorio
+2. Instalar dependencias del backend:
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+cd GB/GBM
+npm install
 ```
 
-## Run tests
+3. Instalar dependencias del frontend:
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+cd client
+npm install
 ```
 
-## Deployment
+4. Configurar variables de entorno: crear archivo `.env` en la raíz del proyecto
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+```
+DATABASE_URL="postgresql://usuario:contraseña@localhost:5432/gamerlab"
+PORT=3001
+```
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+5. Ejecutar migraciones de la base de datos:
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+npx prisma migrate dev
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+6. Iniciar el servidor de desarrollo:
 
-## Resources
+En una terminal (backend):
+```bash
+npm run start:dev
+```
 
-Check out a few resources that may come in handy when working with NestJS:
+En otra terminal (frontend):
+```bash
+npm run client:dev
+```
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+## Estructuras principales
+
+### Principales endpoints API
+
+- `GET /evaluaciones/consolidacion` - Obtener consolidación de todos los videojuegos
+- `GET /evaluaciones/consolidacion/:id_videojuego` - Obtener consolidación de un videojuego específico
+- `GET /evaluaciones/evaluaciones/:id_videojuego` - Obtener todas las evaluaciones de un videojuego
+- `GET /evaluaciones/jurados` - Obtener lista de jurados
+- `GET /evaluaciones/dashboard` - Datos para el dashboard
+- `GET /evaluaciones/analytics` - Datos analíticos
+
+### Páginas de frontend
+
+- `/` - Página principal con lista de videojuegos evaluados
+- `/evaluaciones/dashboard` - Dashboard con estadísticas
+- `/evaluaciones/detalle` - Detalle de una evaluación específica
+
+## Desarrollo
+
+### Comandos útiles
+
+- `npm run build` - Compilar el proyecto
+- `npm run start:dev` - Iniciar servidor de desarrollo (backend)
+- `npm run client:dev` - Iniciar servidor de desarrollo (frontend)
+- `npm run prisma:seed` - Poblar la base de datos con datos de prueba
 
 ## Support
 
