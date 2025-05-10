@@ -34,8 +34,11 @@ export default function FeriaGamer() {
             <Link to="/registrar" className="register-button">
               Registra tu equipo
             </Link>
-            <Link to="/consultar" className="consult-button">
+            <Link to="/consultar" className="register-button">
               Consulta tu equipo
+            </Link>
+            <Link to="/reportes" className="register-button">
+              Ver reportes
             </Link>
           </div>
         </section>
@@ -98,6 +101,6 @@ export default function FeriaGamer() {
           <br />public LayerMask
         </div>
       </div>
-    </div>
-  );
+    </div>
+  );
 }

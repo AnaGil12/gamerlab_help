@@ -1,6 +1,5 @@
 "use client"
 
-import type React from "react"
 import { useState } from "react"
 import "./styles/Steps.css"
 import StepOne from "./components-steps/StepOne"
@@ -9,7 +8,19 @@ import StepThree from "./components-steps/StepThree"
 import StepFour from "./components-steps/StepFour"
 import Header from "./components-steps/header"
 
-const Steps: React.FC = () => {
+interface Subject {
+  subject: string
+  nrc: string
+}
+
+interface Member {
+  fullName: string
+  email: string
+  github: string
+  subjects: Subject[]
+}
+
+const Steps = () => {
   const [currentStep, setCurrentStep] = useState<number>(1)
   const [formData, setFormData] = useState({
     teamName: "",
@@ -19,8 +30,7 @@ const Steps: React.FC = () => {
         fullName: "",
         email: "",
         github: "",
-        subject: "",
-        nrc: "",
+        subjects: [{ subject: "", nrc: "" }],
       },
     ],
     gameName: "",
@@ -43,11 +53,26 @@ const Steps: React.FC = () => {
   const addMember = () => {
     setFormData((prev) => ({
       ...prev,
-      members: [...prev.members, { fullName: "", email: "", github: "", subject: "", nrc: "" }],
+      members: [
+        ...prev.members,
+        {
+          fullName: "",
+          email: "",
+          github: "",
+          subjects: [{ subject: "", nrc: "" }],
+        },
+      ],
     }))
   }
 
-  const updateMember = (index: number, data: Partial<(typeof formData.members)[0]>) => {
+  const removeMember = (index: number) => {
+    setFormData((prev) => ({
+      ...prev,
+      members: prev.members.filter((_, i) => i !== index),
+    }))
+  }
+
+  const updateMember = (index: number, data: Partial<Member>) => {
     setFormData((prev) => {
       const newMembers = [...prev.members]
       newMembers[index] = { ...newMembers[index], ...data }
@@ -65,6 +90,7 @@ const Steps: React.FC = () => {
             formData={formData}
             updateMember={updateMember}
             addMember={addMember}
+            removeMember={removeMember}
             nextStep={nextStep}
             prevStep={prevStep}
           />

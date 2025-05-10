@@ -281,3 +281,21 @@ body {
     padding: 20px 15px;
   }
 }
+
+.report-button {
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  background-color: #555; /* Color distinto para diferenciar */
+  color: white;
+}
+
+.report-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}

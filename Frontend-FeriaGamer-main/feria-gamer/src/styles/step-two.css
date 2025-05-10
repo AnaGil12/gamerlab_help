@@ -1,66 +1,195 @@
+/* Contenedor principal */
+.step-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Título del paso */
+.step-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Formulario de miembro */
 .member-form {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Grupos de formulario */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
+
+/* Fila de materias */
+.subject-row {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 15px;
+}
+
+.subject-field {
+  flex: 1;
+  margin-right: 15px;
+}
+
+.subject-field label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/* Botones de acción para materias */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.purple-line {
+  height: 2px;
+  background-color: #9333ea;
+  width: 20px;
+  margin: 0 5px;
+}
+
+.add-button,
+.remove-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.add-button {
+  background-color: #9333ea;
+  color: white;
+}
+
+.remove-button {
+  background-color: #f3f4f6;
+  color: #ef4444;
+  border: 1px solid #e5e7eb;
+}
+
+/* Botón para eliminar integrante */
+.remove-member {
+  position: absolute;
+  right: -45px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  color: #ef4444;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Botón para agregar integrante */
+.add-member {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #9333ea;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navegación */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.back-button {
+  background-color: transparent;
+  color: #666;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+.back-button span {
+  margin-right: 5px;
+}
+
+.next-button {
+  background-color: #9333ea;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+.next-button span {
+  margin-left: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .subject-row {
+    flex-direction: column;
+    align-items: stretch;
   }
-  
-  .form-row {
-    display: flex;
-    gap: 15px;
-    align-items: flex-end;
+
+  .subject-field {
+    margin-right: 0;
+    margin-bottom: 10px;
   }
-  
-  .form-row .form-group {
-    flex: 1;
+
+  .action-buttons {
+    align-self: flex-end;
+    margin-top: 10px;
   }
-  
-  .add-member-button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #9333ea;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    transition: background-color 0.2s;
+
+  .remove-member {
+    right: 10px;
+    top: 10px;
+    transform: none;
   }
-  
-  .add-member-button:hover {
-    background-color: #7e22ce;
-  }
-  
-  .back-button {
-    background-color: transparent;
-    color: #666;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    transition: color 0.2s;
-  }
-  
-  .back-button:hover {
-    color: #333;
-  }
-  
-  .back-button span {
-    margin-right: 5px;
-  }
-  
-  @media (max-width: 768px) {
-    .form-row {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .add-member-button {
-      align-self: center;
-      margin-top: 10px;
-    }
-  }
-  
+}
