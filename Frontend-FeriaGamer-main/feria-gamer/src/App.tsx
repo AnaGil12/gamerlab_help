@@ -2,7 +2,7 @@
 
 import "./styles/styles.css";
 import { LightbulbIcon, ScaleIcon, GearIcon } from "./icons";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function FeriaGamer() {
   return (
@@ -10,8 +10,12 @@ export default function FeriaGamer() {
       <header className="header">
         <div className="logo">III Feria Gamer</div>
         <nav className="nav">
-          <a href="#" className="nav-link">Jurado</a>
-          <a href="#" className="nav-link">Administrador</a>
+          <a href="#" className="nav-link">
+            Jurado
+          </a>
+          <a href="#" className="nav-link">
+            Administrador
+          </a>
           <Link to="/login" className="button-link">
             Iniciar sesión
           </Link>
@@ -22,12 +26,13 @@ export default function FeriaGamer() {
         <section className="hero-section">
           <h1 className="main-title">
             ¡Bienvenidos a la <span className="highlight">III Feria Gamer</span>
-            <br />de la Universidad del Norte!
+            <br />
+            de la Universidad del Norte!
           </h1>
 
           <p className="subtitle">
-            Una experiencia donde la <strong>pasión por los videojuegos</strong> se
-            convierte en aprendizaje, creatividad y colaboración.
+            Una experiencia donde la <strong>pasión por los videojuegos</strong>{" "}
+            se convierte en aprendizaje, creatividad y colaboración.
           </p>
 
           <div className="buttons-container">
@@ -46,8 +51,8 @@ export default function FeriaGamer() {
         <section className="banner-section">
           <div className="purple-banner">
             <p className="banner-text">
-              ¡Prepárate para jugar, aprender y conectar en
-              esta <strong>nueva edición de la Feria Gamer 2025</strong>!
+              ¡Prepárate para jugar, aprender y conectar en esta{" "}
+              <strong>nueva edición de la Feria Gamer 2025</strong>!
             </p>
           </div>
         </section>
@@ -91,16 +96,23 @@ export default function FeriaGamer() {
 
       <div className="code-background">
         <div className="code-text">
-          public class PlayerController {'{'}
-          <br />MotionState
-          <br />[Header("Movement")]
-          <br />public float moveSpeed;
-          <br />public float rotationSpeed;
-          <br />[Header("Stats")]
-          <br />public float jumpForce;
-          <br />public LayerMask
+          public class PlayerController {"{"}
+          <br />
+          MotionState
+          <br />
+          [Header("Movement")]
+          <br />
+          public float moveSpeed;
+          <br />
+          public float rotationSpeed;
+          <br />
+          [Header("Stats")]
+          <br />
+          public float jumpForce;
+          <br />
+          public LayerMask
         </div>
       </div>
-    </div>
-  );
+    </div>
+  );
 }
