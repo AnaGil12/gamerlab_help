@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import FeriaGamer from "./App";
 import Consultar from "./Consultar";
 import Steps from "./Stepts";
-import Reportes from "./gamerlab_help/GB/GBM/client/src/index.jsx"; // Importación del componente de reportes
+import Reportes from "./analytics/pages/Reportes"; // Importación del componente de reportes
+import EstadisticasIndividuales from "./analytics/pages/EstadisticasIndividuales"; // Importación del componente de estadísticas individuales
 
 import Login from "./LoginProfesor/login-page";
 import TeacherDashboard from "./LoginProfesor/teacher-dashboard";
@@ -49,8 +50,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/profesor" element={<TeacherDashboard />} />
         <Route path="/jurados/*" element={<JuradosDashboard />} />
         <Route path="/curso/:nombre" element={<CourseDetail />} />
-        <Route path="/reportes" element={<Reportes />} />{" "}
-        {/* Nueva ruta para reportes */}
+        <Route path="/reportes" element={<Reportes />} />
+        <Route path="/estadisticas/:id" element={<EstadisticasIndividuales />} />
         {/* Rutas protegidas */}
         {/* Rutas admin anidadas */}
         <Route path="/admin" element={<AdminLayout />}>
