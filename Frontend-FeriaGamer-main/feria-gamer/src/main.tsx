@@ -6,6 +6,7 @@ import Consultar from "./Consultar";
 import Steps from "./Stepts";
 import Reportes from "./analytics/pages/Reportes"; // Importación del componente de reportes
 import EstadisticasIndividuales from "./analytics/pages/EstadisticasIndividuales"; // Importación del componente de estadísticas individuales
+import DashboardEstadisticas from "./analytics/pages/Dashboard";
 
 import Login from "./LoginProfesor/login-page";
 import TeacherDashboard from "./LoginProfesor/teacher-dashboard";
@@ -52,6 +53,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/curso/:nombre" element={<CourseDetail />} />
         <Route path="/reportes" element={<Reportes />} />
         <Route path="/estadisticas/:id" element={<EstadisticasIndividuales />} />
+        <Route path="/dashboard" element={<DashboardEstadisticas />} />
         {/* Rutas protegidas */}
         {/* Rutas admin anidadas */}
         <Route path="/admin" element={<AdminLayout />}>

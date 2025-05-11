@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 // import axios from 'axios';
 import VideojuegoCard from '../components/VideojuegoCard';
 import '../styles/Reportes.css';
@@ -26,6 +27,7 @@ const Reportes: React.FC = () => {
   const [videojuegos, setVideojuegos] = useState<Videojuego[]>([]);
   const [cargando, setCargando] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const obtenerConsolidaciones = async () => {
@@ -106,7 +108,15 @@ const Reportes: React.FC = () => {
     <div className="reportes-container">
       <div className="reportes-header">
         <h1>Reportes y Análisis</h1>
-        <button className="btn btn-primary">Dashboard</button>
+        <button className="btn btn-primary" onClick={() => navigate('/dashboard')} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          {/* Icono de estadísticas tipo gráfico de barras */}
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="10" width="3" height="8" rx="1" fill="white"/>
+            <rect x="8.5" y="5" width="3" height="13" rx="1" fill="white"/>
+            <rect x="15" y="2" width="3" height="16" rx="1" fill="white"/>
+          </svg>
+          Dashboard
+        </button>
       </div>
 
       {cargando ? (
