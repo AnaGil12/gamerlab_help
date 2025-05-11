@@ -161,13 +161,23 @@ const EstadisticasIndividuales: React.FC = () => {
 
   return (
     <div className="estadisticas-container">
-      <div className="estadisticas-header">
-        <div>
-          <Link to="/reportes" className="volver-link">
-            ← Volver a Reportes
-          </Link>
-          <h1>{videojuego.nombre_videojuego}</h1>
-          <p className="equipo-info">Equipo: {videojuego.equipo} | NRC: {videojuego.nrc.join(', ')}</p>
+      <div className="estadisticas-header-container">
+        <div className="estadisticas-header-content">
+          <div className="header-left">
+            <Link to="/reportes" className="back-button">
+              <i className="fas fa-arrow-left"></i>
+              <span>Volver a Reportes</span>
+            </Link>
+          </div>
+          <div className="header-center">
+            <h1>{videojuego.nombre_videojuego}</h1>
+            <p className="equipo-info">Equipo: {videojuego.equipo} | NRC: {videojuego.nrc.join(', ')}</p>
+          </div>
+          <div className="header-right">
+            <div className="promedio-badge">
+              {videojuego.promedio_total.toFixed(2)}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -333,7 +343,6 @@ const EstadisticasIndividuales: React.FC = () => {
           </div>
           <div className="tab-content">
             <div>
-              <h3>Evaluaciones de los jurados</h3>
               {['Ana Gómez', 'Carlos Ruiz', 'María López'].map((nombreJurado, idx) => {
                 const comentarioGeneral = `Comentario general de ${nombreJurado} sobre el videojuego.`;
                 return (

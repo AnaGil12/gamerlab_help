@@ -106,17 +106,34 @@ const Reportes: React.FC = () => {
 
   return (
     <div className="reportes-container">
-      <div className="reportes-header">
-        <h1>Reportes y Análisis</h1>
-        <button className="btn btn-primary" onClick={() => navigate('/dashboard')} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          {/* Icono de estadísticas tipo gráfico de barras */}
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="10" width="3" height="8" rx="1" fill="white"/>
-            <rect x="8.5" y="5" width="3" height="13" rx="1" fill="white"/>
-            <rect x="15" y="2" width="3" height="16" rx="1" fill="white"/>
-          </svg>
-          Dashboard
-        </button>
+      <div className="reportes-header-container">
+        <div className="reportes-header-content">
+          <div className="header-left">
+            <button 
+              className="back-button"
+              onClick={() => navigate(-1)}
+            >
+              <i className="fas fa-arrow-left"></i>
+              <span>Volver</span>
+            </button>
+          </div>
+          <div className="header-center">
+            <h1>Reportes y Análisis</h1>
+          </div>
+          <div className="header-right">
+            <button 
+              className="btn btn-primary dashboard-btn" 
+              onClick={() => navigate('/dashboard')}
+            >
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="10" width="3" height="8" rx="1" fill="white"/>
+                <rect x="8.5" y="5" width="3" height="13" rx="1" fill="white"/>
+                <rect x="15" y="2" width="3" height="16" rx="1" fill="white"/>
+              </svg>
+              <span>Dashboard</span>
+            </button>
+          </div>
+        </div>
       </div>
 
       {cargando ? (
