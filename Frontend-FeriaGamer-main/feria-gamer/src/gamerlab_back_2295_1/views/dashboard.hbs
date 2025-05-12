@@ -339,39 +339,16 @@
       }
     }
     
-    // Función para establecer el rol de usuario (SOLO PARA DEMOSTRACION)
+    // Función para establecer el rol de usuario
     function setUserRole(role) {
       localStorage.setItem('userRole', role);
       verificarPermisos();
-    }
-    
-    // Crear panel de control temporal para demostración de roles
-    function crearPanelRoles() {
-      const panelDiv = document.createElement('div');
-      panelDiv.className = 'role-panel';
-      panelDiv.style.position = 'fixed';
-      panelDiv.style.bottom = '20px';
-      panelDiv.style.right = '20px';
-      panelDiv.style.background = '#f8f9fa';
-      panelDiv.style.padding = '10px';
-      panelDiv.style.borderRadius = '5px';
-      panelDiv.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
-      
-      panelDiv.innerHTML = `
-        <div style="margin-bottom: 5px; font-weight: bold;">Simular Rol:</div>
-        <button onclick="setUserRole('admin')" style="margin-right: 5px; padding: 3px 8px;">Admin</button>
-        <button onclick="setUserRole('jurado')" style="margin-right: 5px; padding: 3px 8px;">Jurado</button>
-        <button onclick="setUserRole('participante')" style="padding: 3px 8px;">Participante</button>
-      `;
-      
-      document.body.appendChild(panelDiv);
     }
     
     // Inicializar cuando se cargue la página
     window.addEventListener('DOMContentLoaded', () => {
       cargarAnalytics();
       verificarPermisos();
-      crearPanelRoles(); // Solo para demostración
     });
     
     // Función para cambiar pestañas
