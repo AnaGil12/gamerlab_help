@@ -4,8 +4,7 @@ import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import FeriaGamer from "./App";
 import Consultar from "./Consultar";
 import Steps from "./Stepts";
-import Reportes from "./gamerlab_help/GB/GBM/client/src/index.jsx"; // Importación del componente de reportes
-
+import Reportes from "./components/Reportes";
 import Login from "./LoginProfesor/login-page";
 import TeacherDashboard from "./LoginProfesor/teacher-dashboard";
 import CourseDetail from "./LoginProfesor/course-detail";

@@ -281,7 +281,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\jairo\\OneDrive\\Documentos\\VSProjects\\gamerlab_back_2295_1\\generated\\prisma",
+      "value": "C:\\Users\\AlanP\\Downloads\\gamerlab_help\\Frontend-FeriaGamer-main\\feria-gamer\\src\\gamerlab_back_2295_1\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -295,7 +295,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\jairo\\OneDrive\\Documentos\\VSProjects\\gamerlab_back_2295_1\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\AlanP\\Downloads\\gamerlab_help\\Frontend-FeriaGamer-main\\feria-gamer\\src\\gamerlab_back_2295_1\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {

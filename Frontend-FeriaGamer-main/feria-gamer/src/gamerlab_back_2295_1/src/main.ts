@@ -7,8 +7,13 @@ import * as hbs from 'hbs';
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   
-  // Configuración de CORS
-  app.enableCors();
+  // Configuración de CORS actualizada
+  app.enableCors({
+    origin: 'http://localhost:5173', // URL del frontend
+    credentials: true,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    allowedHeaders: ['Content-Type', 'Accept', 'Authorization'],
+  });
   
   // Configurar helpers de Handlebars
   hbs.registerHelper('formatDate', function(date) {
